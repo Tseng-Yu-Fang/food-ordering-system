@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="441.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hw18_customerpage.CustomerPageController">
+   <children>
+      <VBox prefHeight="441.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #B22222; -fx-border-color: black;">
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8-mcdonald%60s-480.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="95.0" prefWidth="177.0" stylesheets="@../css/bootstrap3.css" text="McDonald" textFill="#fbf8f8">
+                     <HBox.margin>
+                        <Insets left="150.0" right="150.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_close" mnemonicParsing="false" onAction="#atn_close" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: #FFB6CE;" stylesheets="@../css/bootstrap3.css" text="登出">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TabPane prefHeight="391.0" prefWidth="592.0" stylesheets="@../css/bootstrap3.css" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="菜單">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="515.0">
+                           <children>
+                              <ScrollPane prefHeight="356.0" prefWidth="600.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="588.0">
+                                       <children>
+                                          <VBox>
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="36.0" prefWidth="582.0" stylesheets="@../css/bootstrap3.css">
+                                                   <children>
+                                                      <Label text="外送地址:">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txt_menuaddress" editable="false" prefHeight="18.0" prefWidth="311.0">
+                                                         <HBox.margin>
+                                                            <Insets right="20.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label text="預計送達時間: 30~45分鐘">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <GridPane prefHeight="540.0" prefWidth="564.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="180.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="180.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="180.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;">
+                                                         <children>
+                                                            <ImageView fitHeight="109.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/frenchfry.jpg" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" prefHeight="19.0" prefWidth="295.0" text="大薯 $40">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="289.0" style="-fx-background-color: gray;" stylesheets="@../css/bootstrap3.css">
+                                                               <children>
+                                                                  <Button fx:id="btn_foodM1m" mnemonicParsing="false" onAction="#atn_minusOne" text="–" />
+                                                                  <Label fx:id="lbl_foodM1num" alignment="CENTER" prefHeight="28.0" prefWidth="57.0" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="btn_foodM1" mnemonicParsing="false" onAction="#atn_addOne" text="+">
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btn_foodM1clean" mnemonicParsing="false" onAction="#atn_clean" styleClass="danger" stylesheets="@../css/bootstrap3.css" text="清空" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.columnIndex="1">
+                                                         <children>
+                                                            <ImageView fitHeight="109.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/hamburger2.jpg" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" prefHeight="19.0" prefWidth="295.0" text="香雞堡 $50">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="289.0" style="-fx-background-color: gray;">
+                                                               <children>
+                                                                  <Button fx:id="btn_foodM2m" mnemonicParsing="false" onAction="#atn_minusOne" text="–" />
+                                                                  <Label fx:id="lbl_foodM2num" alignment="CENTER" prefHeight="28.0" prefWidth="57.0" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="btn_foodM2" mnemonicParsing="false" onAction="#atn_addOne" text="+">
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btn_foodM2clean" mnemonicParsing="false" onAction="#atn_clean" styleClass="danger" stylesheets="@../css/bootstrap3.css" text="清空" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ImageView fitHeight="109.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/小麥克.jpg" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" prefHeight="19.0" prefWidth="295.0" text="牛肉起司堡 $55">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="289.0" style="-fx-background-color: gray;">
+                                                               <children>
+                                                                  <Button fx:id="btn_foodM3m" mnemonicParsing="false" onAction="#atn_minusOne" text="–" />
+                                                                  <Label fx:id="lbl_foodM3num" alignment="CENTER" prefHeight="28.0" prefWidth="57.0" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="btn_foodM3" mnemonicParsing="false" onAction="#atn_addOne" text="+">
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btn_foodM3clean" mnemonicParsing="false" onAction="#atn_clean" styleClass="danger" stylesheets="@../css/bootstrap3.css" text="清空" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                         <children>
+                                                            <ImageView fitHeight="109.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/combo_set.jpg" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" prefHeight="19.0" prefWidth="295.0" text="大麥克套餐$110">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="289.0" style="-fx-background-color: gray;">
+                                                               <children>
+                                                                  <Button fx:id="btn_foodM4m" mnemonicParsing="false" onAction="#atn_minusOne" text="–" />
+                                                                  <Label fx:id="lbl_foodM4num" alignment="CENTER" prefHeight="28.0" prefWidth="57.0" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="btn_foodM4" mnemonicParsing="false" onAction="#atn_addOne" text="+">
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btn_foodM4clean" mnemonicParsing="false" onAction="#atn_clean" styleClass="danger" stylesheets="@../css/bootstrap3.css" text="清空" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ImageView fitHeight="109.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/cola.jpg" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" prefHeight="19.0" prefWidth="295.0" text="可樂 $30">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="289.0" style="-fx-background-color: gray;">
+                                                               <children>
+                                                                  <Button fx:id="btn_foodM5m" mnemonicParsing="false" onAction="#atn_minusOne" text="–" />
+                                                                  <Label fx:id="lbl_foodM5num" alignment="CENTER" prefHeight="28.0" prefWidth="57.0" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="btn_foodM5" mnemonicParsing="false" onAction="#atn_addOne" text="+">
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btn_foodM5clean" mnemonicParsing="false" onAction="#atn_clean" styleClass="danger" stylesheets="@../css/bootstrap3.css" text="清空" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black;" GridPane.rowIndex="2">
+                                                         <children>
+                                                            <ImageView fitHeight="109.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/hamburger3.jpg" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" prefHeight="19.0" prefWidth="295.0" text="牛肉蛋堡 $55">
+                                                               <font>
+                                                                  <Font size="18.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="289.0" style="-fx-background-color: gray;">
+                                                               <children>
+                                                                  <Button fx:id="btn_foodM6m" mnemonicParsing="false" onAction="#atn_minusOne" text="–" />
+                                                                  <Label fx:id="lbl_foodM6num" alignment="CENTER" prefHeight="28.0" prefWidth="57.0" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Button fx:id="btn_foodM6" mnemonicParsing="false" onAction="#atn_addOne" text="+">
+                                                                     <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                     </HBox.margin>
+                                                                  </Button>
+                                                                  <Button fx:id="btn_foodM6clean" mnemonicParsing="false" onAction="#atn_clean" styleClass="danger" stylesheets="@../css/bootstrap3.css" text="清空" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </VBox.margin>
+                                                </GridPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="購物車">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="355.0" prefWidth="600.0">
+                                 <children>
+                                    <HBox prefHeight="357.0" prefWidth="600.0">
+                                       <children>
+                                          <VBox prefHeight="345.0" prefWidth="341.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="308.0" style="-fx-background-color: #FAFAD2;">
+                                                   <children>
+                                                      <ImageView fitHeight="26.0" fitWidth="21.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/icons8-address-96.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label prefHeight="19.0" prefWidth="105.0" text="外送地址:">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txt_shoppingaddress" editable="false" prefHeight="28.0" prefWidth="276.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="3.0" right="5.0" top="3.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <TableView fx:id="tableview_displayshopping" prefHeight="322.0" prefWidth="308.0" styleClass="table-column" stylesheets="@../css/bootstrap3.css" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="355.0" prefWidth="268.0">
+                                             <children>
+                                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="254.0" style="-fx-border-color: black; -fx-background-color: #D3D3D3;">
+                                                         <children>
+                                                            <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@../image/icons8-shopping-bag-96.png" />
+                                                               </image>
+                                                               <HBox.margin>
+                                                                  <Insets left="37.0" />
+                                                               </HBox.margin>
+                                                            </ImageView>
+                                                            <Label prefHeight="19.0" prefWidth="88.0" text="訂單資訊">
+                                                               <font>
+                                                                  <Font size="14.0" />
+                                                               </font>
+                                                               <HBox.margin>
+                                                                  <Insets left="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+                                                         </children>
+                                                      </HBox>
+                                                      <GridPane alignment="CENTER" layoutX="1.0" layoutY="38.0" prefHeight="96.0" prefWidth="254.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="10.0" prefWidth="74.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="178.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="87.0">
+                                                               <children>
+                                                                  <Label text="小計:">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="87.0" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label text="運費:">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                               <children>
+                                                                  <Label text="NT$">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="lbl_shoppingsubtotal" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <GridPane.margin>
+                                                                  <Insets right="40.0" />
+                                                               </GridPane.margin>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label text="NT$">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="lbl_shoppingtransport" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <GridPane.margin>
+                                                                  <Insets right="40.0" />
+                                                               </GridPane.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </GridPane>
+                                                      <Line endX="86.0" layoutX="129.0" layoutY="134.0" startX="-89.0" />
+                                                      <GridPane layoutX="1.0" layoutY="138.0" prefHeight="48.0" prefWidth="254.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="74.0" minWidth="10.0" prefWidth="74.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="178.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="87.0">
+                                                               <children>
+                                                                  <Label text="合計:">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                               <children>
+                                                                  <Label text="NT$">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label fx:id="lbl_shoppingtotal" text="0">
+                                                                     <font>
+                                                                        <Font size="14.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <GridPane.margin>
+                                                                  <Insets right="40.0" />
+                                                               </GridPane.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Pane>
+                                                <Button fx:id="btn_shoppingcheck" mnemonicParsing="false" onAction="#atn_shoppingcheck" prefHeight="31.0" prefWidth="177.0" styleClass="success" stylesheets="@../css/bootstrap3.css" text="結帳">
+                                                   <VBox.margin>
+                                                      <Insets top="15.0" />
+                                                   </VBox.margin>
+                                                </Button>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="追蹤訂單">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="515.0">
+                           <children>
+                              <HBox prefHeight="355.0" prefWidth="600.0">
+                                 <children>
+                                    <VBox prefHeight="355.0" prefWidth="307.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="225.0" style="-fx-background-color: #FAFAD2;" stylesheets="@../css/bootstrap3.css">
+                                             <children>
+                                                <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/icons8-security-pass-24.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="lbl_ordername" prefHeight="19.0" prefWidth="110.0" text="會員名稱">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/icons8-tag-window-100.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label prefHeight="19.0" prefWidth="66.0" text="會員編號 :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="lbl_ordernumber1" text="0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tableview_displayorder" prefHeight="325.0" prefWidth="225.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="355.0" prefWidth="342.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="375.0">
+                                             <children>
+                                                <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/icons8-search-480.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <TextField fx:id="txt_ordernumber" prefWidth="219.0" promptText="請輸入訂單編號查詢明細">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <Button fx:id="btn_ordernumbersearch" mnemonicParsing="false" onAction="#btn_ordernumbersearch" prefHeight="31.0" prefWidth="53.0" styleClass="warning" text="查詢">
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <TextArea fx:id="txt_displayordermenu" editable="false" prefHeight="299.0" prefWidth="271.0">
+                                             <VBox.margin>
+                                                <Insets bottom="15.0" left="20.0" right="20.0" top="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </TextArea>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="會員資料">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="515.0">
+                           <children>
+                              <VBox prefHeight="355.0" prefWidth="600.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="600.0" style="-fx-background-color: #FAFAD2;" stylesheets="@../css/bootstrap3.css">
+                                       <children>
+                                          <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icons8-security-pass-24.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="lbl_customername" text="會員名稱">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icons8-tag-window-100.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label text="會員編號：">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lbl_customernumber" text="0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets top="2.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="600.0">
+                                       <children>
+                                          <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                             <image>
+                                                <Image url="@../image/icons8-edit-image-96.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label text="編輯會員資料">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="226.0" prefWidth="600.0">
+                                       <children>
+                                          <GridPane alignment="CENTER_RIGHT" prefHeight="230.0" prefWidth="600.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.66668701171875" minWidth="10.0" prefWidth="161.66665649414062" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="470.6666564941406" minWidth="10.0" prefWidth="438.3333435058594" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label text="姓名:">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <TextField fx:id="txt_customername" prefWidth="0.0" GridPane.columnIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets right="150.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txt_customeraccount" prefWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets right="150.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <PasswordField fx:id="txt_customerpassword" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets right="150.0" />
+                                                   </GridPane.margin>
+                                                </PasswordField>
+                                                <PasswordField fx:id="txt_customerpasswordagain" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets right="150.0" />
+                                                   </GridPane.margin>
+                                                </PasswordField>
+                                                <TextField fx:id="txt_customeraddress" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets right="50.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="txt_customerphone" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <GridPane.margin>
+                                                      <Insets right="150.0" />
+                                                   </GridPane.margin>
+                                                </TextField>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label text="帳號:">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label text="密碼:">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label text="確認密碼:">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Label text="外送地址:">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+                                                   <children>
+                                                      <Label text="電話:">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="57.0" prefWidth="600.0">
+                                       <children>
+                                          <Button fx:id="btn_okrenew" mnemonicParsing="false" onAction="#atn_okrenew" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #FFE4E1;" stylesheets="@../css/bootstrap3.css" text="儲存變更" />
+                                          <Button fx:id="btn_cancelrenew" mnemonicParsing="false" onAction="#atn_cancelrenew" prefHeight="31.0" prefWidth="80.0" stylesheets="@../css/bootstrap3.css" text="取消">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

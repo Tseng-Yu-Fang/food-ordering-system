@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hw18_home.HomeScreenController">
+    <stylesheets>
+        <URL value="@homescreen.css" />
+      <URL value="@bootstrap3.css" />
+    </stylesheets>
+   <children>
+      <HBox alignment="CENTER" prefHeight="57.0" prefWidth="300.0" style="-fx-border-color: black;" styleClass="track" stylesheets="@bootstrap3.css">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="lg">
+               <image>
+                  <Image url="@../image/icons8-mcdonald%60s-480.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="41.0" prefWidth="74.0" stylesheets="@bootstrap3.css" text="McDonald" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="50.0" right="35.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <MenuBar prefHeight="32.0" prefWidth="69.0" styleClass="button" stylesheets="@../css/bootstrap3.css">
+              <menus>
+                <Menu mnemonicParsing="false" text="登入">
+                  <items>
+                    <MenuItem fx:id="customerlogin_menuitem" mnemonicParsing="false" onAction="#customerlogin" text="會員登入" />
+                        <MenuItem mnemonicParsing="false" onAction="#customerregister" text="會員註冊" />
+                        <MenuItem fx:id="managerlogin_menuitem" mnemonicParsing="false" onAction="#managerlogin" text="管理員登入" />
+                  </items>
+                </Menu>
+              </menus>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </MenuBar>
+         </children>
+      </HBox>
+      <Pane fx:id="pane_container" layoutY="55.0" prefHeight="346.0" prefWidth="300.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="346.0" prefWidth="300.0" spacing="30.0" style="-fx-background-color: #B22222; -fx-border-color: black;">
+               <children>
+                  <Label alignment="CENTER" prefHeight="34.0" prefWidth="206.0" text="請先登入" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ImageView fitHeight="149.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8-mcdonald%60s-480.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="5.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

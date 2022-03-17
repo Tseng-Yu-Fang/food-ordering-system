@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="441.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hw18_managerpage.ManagerPageController">
+   <children>
+      <VBox prefHeight="441.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #B22222; -fx-border-color: black;">
+               <children>
+                  <ImageView fitHeight="48.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/icons8-mcdonald%60s-480.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="95.0" prefWidth="177.0" stylesheets="@../css/bootstrap3.css" text="McDonald" textFill="#fbf8f8">
+                     <HBox.margin>
+                        <Insets left="150.0" right="150.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_close" mnemonicParsing="false" onAction="#atn_close" prefHeight="31.0" prefWidth="56.0" style="-fx-background-color: #FFB6CE;" stylesheets="@../css/bootstrap3.css" text="登出">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TabPane prefHeight="391.0" prefWidth="592.0" stylesheets="@../css/bootstrap3.css" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="出餐狀況">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="515.0">
+                           <children>
+                              <HBox prefHeight="355.0" prefWidth="600.0">
+                                 <children>
+                                    <VBox prefHeight="355.0" prefWidth="358.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="225.0" style="-fx-background-color: #FAFAD2;" stylesheets="@../css/bootstrap3.css">
+                                             <children>
+                                                <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/icons8-security-pass-24.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="lbl_ordername" prefHeight="19.0" prefWidth="75.0" text="管理員名稱">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/icons8-tag-window-100.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="15.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label prefHeight="19.0" prefWidth="80.0" text="管理員編號 :">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="lbl_ordernumber" text="0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" top="2.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tableview_displayorder" prefHeight="320.0" prefWidth="308.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="355.0" prefWidth="290.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="375.0">
+                                             <children>
+                                                <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../image/icons8-search-480.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <TextField fx:id="txt_ordernumber1" prefWidth="164.0" promptText="請輸入訂單編號">
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <Button fx:id="btn_ordernumbersearch1" mnemonicParsing="false" onAction="#atn_ordernumbersearch" prefHeight="31.0" prefWidth="53.0" styleClass="warning" text="查詢">
+                                                   <HBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </HBox.margin>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tableview_displaymenu" prefHeight="303.0" prefWidth="318.0">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </VBox.margin>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="會員報表">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="356.0" prefWidth="600.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="225.0" style="-fx-background-color: #FAFAD2;" stylesheets="@../css/bootstrap3.css">
+                                       <children>
+                                          <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icons8-security-pass-24.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="lbl_reportname" prefHeight="19.0" prefWidth="75.0" text="管理員名稱">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icons8-tag-window-100.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="15.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="19.0" prefWidth="80.0" text="管理員編號 :">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lbl_reportnumber" text="0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="5.0" top="2.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="321.0" prefWidth="600.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="56.0" prefWidth="375.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="293.0">
+                                                   <children>
+                                                      <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/icons8-search-480.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <TextField fx:id="txt_customerreportid" prefWidth="193.0" promptText="請輸入會員編號">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Button fx:id="btn_customerreportsearchid" mnemonicParsing="false" onAction="#atn_customerreportsaerchid" prefHeight="31.0" prefWidth="53.0" styleClass="warning" text="查詢">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="320.0">
+                                                   <children>
+                                                      <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/icons8-search-480.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets left="30.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <TextField fx:id="txt_customerreportname" prefWidth="193.0" promptText="請輸入會員姓名">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Button fx:id="btn_customerreportsearch" mnemonicParsing="false" onAction="#atn_customerreportsaerch" prefHeight="31.0" prefWidth="53.0" styleClass="warning" text="查詢">
+                                                         <HBox.margin>
+                                                            <Insets right="7.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tableview_displayreport" prefHeight="303.0" prefWidth="318.0">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </VBox.margin>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="訂單報表">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="356.0" prefWidth="600.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="225.0" style="-fx-background-color: #FAFAD2;" stylesheets="@../css/bootstrap3.css">
+                                       <children>
+                                          <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icons8-security-pass-24.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label fx:id="lbl_orderreportname" prefHeight="19.0" prefWidth="75.0" text="管理員名稱">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/icons8-tag-window-100.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="15.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Label prefHeight="19.0" prefWidth="80.0" text="管理員編號 :">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label fx:id="lbl_orderreportnumber" text="0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets right="5.0" top="2.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <VBox prefHeight="321.0" prefWidth="600.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="56.0" prefWidth="375.0">
+                                             <children>
+                                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="293.0">
+                                                   <children>
+                                                      <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/icons8-search-480.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <TextField fx:id="txt_orderreportid" prefWidth="193.0" promptText="請輸入會員編號">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Button fx:id="btn_orderreportsearchid" mnemonicParsing="false" onAction="#atn_orderreportsaerchid" prefHeight="31.0" prefWidth="53.0" styleClass="warning" text="查詢">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="35.0" prefWidth="320.0">
+                                                   <children>
+                                                      <ImageView fitHeight="29.0" fitWidth="23.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../image/icons8-search-480.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets left="30.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <TextField fx:id="txt_orderreportnum" prefWidth="193.0" promptText="請輸入訂單編號">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Button fx:id="btn_orderreportsearch" mnemonicParsing="false" onAction="#atn_orderreportsaerch" prefHeight="31.0" prefWidth="53.0" styleClass="warning" text="查詢">
+                                                         <HBox.margin>
+                                                            <Insets right="7.0" />
+                                                         </HBox.margin>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <TableView fx:id="tableview_displayorderreport" prefHeight="303.0" prefWidth="318.0">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </VBox.margin>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
